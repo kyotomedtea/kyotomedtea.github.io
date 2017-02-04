@@ -598,6 +598,7 @@ footer {
     }
     #logo{
       width: 100%;
+      background-size: 100% auto;
     }
 
     /* 下層サブメニュー */

@@ -7,17 +7,16 @@
 <meta name="keywords" content="京都大学医学部茶道部,医学部茶道部,京医茶,茶道部,京都大学医学部,京大医学部,京大,京都大学,如意会">
 <meta name="description" content="発足36周年を迎えた京都大学医学部茶道部のホームページです。主に新入生向けの新歓情報、お茶会情報、OB・OG様向けの情報を発信しております。">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/fullcalendar.css" type="text/css" media="all" />
+
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/jquery.smoothscroll.js"></script>
 <script type="text/javascript" src="js/jquery.scrollshow.js"></script>
 <script type="text/javascript" src="js/jquery.rollover.js"></script>
 <script type="text/javascript" src="js/jquery.slideshow.js"></script>
-<script type="text/javascript" src="js/jsmail.js"></script>
 <script type="text/javascript" src="js/setting.js"></script>
-
-<link rel="stylesheet" href="css/fullcalendar.css" type="text/css" media="all" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jsmail.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/fullcalendar.js"></script>
 <script type="text/javascript" src="js/gcal.js"></script>
@@ -26,8 +25,13 @@
 <script>
 $(document).ready(function() {
     $('#calendar').fullCalendar({
+        header: {
+            // title, prev, next, prevYear, nextYear, today
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month agendaWeek agendaDay'
+        },
         firstDay: 1,
-        
         googleCalendarApiKey: 'AIzaSyANgrH5snvVXb6TRBdemxz-34iusEU4v4g',
         eventSources:[
 		{
@@ -105,8 +109,8 @@ $(document).ready(function() {
         <h3>お知らせ</h3>
           <p>春茶会、新歓の準備進行中！！（2017年2月現在）<br>
           <a href="welcome.html">新歓について</a></p>
-        <div id="calendar">
-        </div>
+        <h3>活動予定</h3>
+          <div id="calendar"></div>
     </section>
   </div><!-- /#main -->
   <div id="sub">

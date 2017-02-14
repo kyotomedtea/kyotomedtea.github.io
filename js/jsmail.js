@@ -5,6 +5,7 @@ function secretaddress() {
 	document.write('<a href="'+ mt + ma + sbbd + '">' + ma + '</a>');
 }
 
+
 // http://www.nishishi.com/scripts/jsmail/
 //件名→行きたい新歓
 //お問い合わせありがとうございます！件名に行きたい新歓を、以下の本文に学部学科、お名前、その他連絡事項をご記入お願いします！
@@ -18,3 +19,10 @@ function secretaddress() {
 
 //http://www.tagindex.com/tool/url.html
 //ここで変換
+
+
+function secretaddress2() {
+	var ma = String.fromCharCode(125-18,98+23,114-3,115+1,131-20,27+19,126-17,72+29,119-19,105+0,118-19,90+7,129-21,26+20,136-20,90+11,101-4,40+24,111-8,102+7,116-19,81+24,111-3,19+27,113-14,84+27,121-12);
+	var mt = String.fromCharCode(127-18,58+39,136-31,68+40,127-11,62+49,83-25);
+	document.write('<a href="'+ mt + ma + '">' + ma + '</a>');
+}

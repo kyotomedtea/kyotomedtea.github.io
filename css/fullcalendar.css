@@ -1424,6 +1424,6 @@ be a descendant of the grid when it is being dragged.
  ================================================*/
 @media screen and (max-width:779px) {
 	body .fc {
-		font-size: 0.5em;
+		font-size: 0.7em;
 	}
 }

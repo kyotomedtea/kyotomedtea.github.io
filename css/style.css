@@ -642,6 +642,8 @@ footer {
     }
     .googlecal {
       padding-bottom: 75%;
+    }
+    .cal_wrapper {
       width: 80%;
     }
 }

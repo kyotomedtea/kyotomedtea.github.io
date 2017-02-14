@@ -15,10 +15,35 @@
 <script type="text/javascript" src="js/jquery.slideshow.js"></script>
 <script type="text/javascript" src="js/jsmail.js"></script>
 <script type="text/javascript" src="js/setting.js"></script>
+
+<link rel="stylesheet" href="css/fullcalendar.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/fullcalendar.js"></script>
+<script type="text/javascript" src="js/gcal.js"></script>
+<script type="text/javascript" src="js/locale/ja.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        firstDay: 1,
+        
+        googleCalendarApiKey: 'AIzaSyANgrH5snvVXb6TRBdemxz-34iusEU4v4g',
+        eventSources:[
+		{
+            googleCalendarId: 'kyoto.medical.tea@gmail.com',
+            className: '活動予定'
+        	},
+        ],
+    });
+});
+</script>
+
 <!--[if lt IE 9]>
    <script src="js/html5shiv.js"></script>
    <script src="js/css3-mediaqueries.js"></script>
 <![endif]-->
+
 </head>
 <body>
 <script type="text/javascript">
@@ -80,11 +105,7 @@
         <h3>お知らせ</h3>
           <p>春茶会、新歓の準備進行中！！（2017年2月現在）<br>
           <a href="welcome.html">新歓について</a></p>
-        <h3>活動予定</h3>
-        <div class="cal_wrapper">
-          <div class="googlecal">
-            <iframe src="https://calendar.google.com/calendar/embed?title=%E4%BA%AC%E9%83%BD%E5%A4%A7%E5%AD%A6%E5%8C%BB%E5%AD%A6%E9%83%A8%E8%8C%B6%E9%81%93%E9%83%A8&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=kyoto.medical.tea%40gmail.com&amp;color=%23182C57&amp;ctz=Asia%2FTokyo" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-          </div>
+        <div id="calendar">
         </div>
     </section>
   </div><!-- /#main -->

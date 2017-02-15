@@ -16,6 +16,7 @@
 
 body .fc { /* extra precedence to overcome jqui */
 	font-size: 1em;
+	word-break: normal;
 }
 
 

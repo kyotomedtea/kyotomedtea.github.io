@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://kyotomedtea.github.io/</loc>
-      <lastmod>2017-02-14</lastmod>
+      <lastmod>2017-02-04</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://kyotomedtea.github.io/about.html</loc>
-      <lastmod>2017-02-14</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
+      <lastmod>2017-02-04</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
    </url>
    <url>
       <loc>https://kyotomedtea.github.io/activities.html</loc>
-      <lastmod>2017-02-14</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
+      <lastmod>2017-02-04</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
    </url>
    <url>
       <loc>https://kyotomedtea.github.io/index.html</loc>
-      <lastmod>2017-02-14</lastmod>
-      <changefreq>weekly</changefreq>
+      <lastmod>2017-02-04</lastmod>
+      <changefreq>daily</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
       <loc>https://kyotomedtea.github.io/inquiry.html</loc>
-      <lastmod>2017-02-14</lastmod>
+      <lastmod>2017-02-04</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.0</priority>
+      <priority>0.5</priority>
    </url>
    <url>
       <loc>https://kyotomedtea.github.io/obog.html</loc>
-      <lastmod>2017-02-14</lastmod>
+      <lastmod>2017-02-04</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
       <loc>https://kyotomedtea.github.io/welcome.html</loc>
-      <lastmod>2017-02-14</lastmod>
+      <lastmod>2017-02-04</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
    </url>

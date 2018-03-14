@@ -26,3 +26,8 @@ function secretaddress2() {
 	var mt = String.fromCharCode(109,97,105,108,116,111,58);
 	document.write('<a href="'+ mt + ma + '">' + ma + '</a>');
 }
+function secretaddress3() {
+	var ma = String.fromCharCode(107,121,111,116,111,46,109,101,100,105,99,97,108,46,116,101,97,64,103,109,97,105,108,46,99,111,109);
+	var mt = String.fromCharCode(109,97,105,108,116,111,58);
+	document.write('<a href="'+ mt + ma + '">' + ma + '</a>');
+}

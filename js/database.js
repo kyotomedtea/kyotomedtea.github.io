@@ -25,7 +25,7 @@ function result(data){
   JSON2HTML(originalJSON);
 }
 
-function failed(){
+function failure(){
   alert('データベースの読み込みに失敗しました。');
 }
 

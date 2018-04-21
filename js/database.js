@@ -8,7 +8,7 @@ var myrec=
 ];
 
 var docid = "137rAVHaZkPn8Lv0RSYqFTXSV8GyE7ywOecldS2Im_7Q";
-var jsonURL = "https://spreadsheets.google.com/feeds/cells/" + docid + "/od6/public/values?alt=json"
+var jsonURL = "https://spreadsheets.google.com/feeds/cells/" + docid + "/od6/public/values?alt=json";
 
 function catedorizeData(sheetsEntry){ // データを整形して配列で返す
   var categorized = [];

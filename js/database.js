@@ -8,19 +8,7 @@ var myrec=
 ];
 
 
-function categorizeData(sheetsEntry){ // データを整形して配列で返す
-  var categorized = [];
-  for(var i = 0; i < sheetsEntry.length; i++){
-    var dataCol = sheetsEntry[i].gs$cell.col;
-    var dataRow = sheetsEntry[i].gs$cell.row;
 
-    if(dataCol == 1 && dataRow != sheetsEntry[i+1].gs$cell.row){
-      categorized[categorized.length] = [];
-    }
-    categorized[categorized.length-1].push(sheetsEntry[i]);
-  }
-  return categorized;
-}
 
 function renderForm(categorized){ // レンダリング用の関数
   var target = $('.formSubmit');

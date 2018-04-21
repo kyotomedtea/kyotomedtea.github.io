@@ -8,8 +8,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="js/database.js"></script>
-  <script>//読み込み時
-  $(document).ready(function(){
+  <script>
+
+  function categorizeData(sheetsEntry){ // データを整形して配列で返す
+    var categorized = [];
+    for(var i = 0; i < sheetsEntry.length; i++) {
+      var dataCol = sheetsEntry[i].gs$cell.col;
+      var dataRow = sheetsEntry[i].gs$cell.row;
+
+      if(dataCol == 1 && dataRow != sheetsEntry[i+1].gs$cell.row){
+        categorized[categorized.length] = [];
+      }
+      categorized[categorized.length-1].push(sheetsEntry[i]);
+    }
+    alert(categorized);
+    return categorized;
+  }
+
+  $(document).ready(function(){  //読み込み時
     var docid = "137rAVHaZkPn8Lv0RSYqFTXSV8GyE7ywOecldS2Im_7Q";
     var jsonURL = "https://spreadsheets.google.com/feeds/cells/" + docid + "/od6/public/values?alt=json";
     alert('The document is ready.5');
@@ -21,7 +37,6 @@
     success: function(data){ // 通信が成功した時
       var sheetsEntry = data.feed.entry; // 実データ部分を取得
       //alert(sheetsEntry); //これは動作した
-      alert(JSON.stringify(sheetsEntry));
       categorized = categorizeData(sheetsEntry); // データを整形して配列で返す
       renderForm(categorized); // レンダリング用の関数を呼ぶ
     },

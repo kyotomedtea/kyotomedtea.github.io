@@ -10,7 +10,9 @@
   <script src="js/database.js"></script>
   <script>//読み込み時
   $(document).ready(function(){
-    alert('The document is ready.3');
+    var docid = "137rAVHaZkPn8Lv0RSYqFTXSV8GyE7ywOecldS2Im_7Q";
+    var jsonURL = "https://spreadsheets.google.com/feeds/cells/" + docid + "/od6/public/values?alt=json";
+    alert('The document is ready.4');
     $.ajax({
     type: 'GET',
     url: jsonURL,

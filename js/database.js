@@ -6,16 +6,36 @@ var myrec=
   {"no":"3","name":"name3","score":"67"},
   {"no":"4","name":"name4","score":"32"}
 ];
-alert("test");
 
-$(function(){
-  alert('The document is ready.');
-  google.script.run.withSuccessHandler(result).getDBasJSON();
-//    google.script.run
-//    .withSuccessHandler(result)
-//    .withFailureHandler(failed)
-//    .getDBasJSON(); //ページが読み込まれたらすぐにデータベースをゲットし、そのJSONデータを関数resultに渡す　　失敗したときのメソッドを考える必要がある
-});
+var docid = "137rAVHaZkPn8Lv0RSYqFTXSV8GyE7ywOecldS2Im_7Q";
+var jsonURL = "https://spreadsheets.google.com/feeds/cells/" + docid + "/od6/public/values?alt=json"
+
+function catedorizeData(sheetsEntry){ // データを整形して配列で返す
+  var categorized = [];
+  for(var i = 0; i &lt; sheetsEntry.length; i++) {
+    var dataCol = sheetsEntry[i].gs$cell.col;
+    var dataRow = sheetsEntry[i].gs$cell.row;
+
+    if(dataCol == 1 &amp;&amp; dataRow != sheetsEntry[i+1].gs$cell.row){
+      categorized[categorized.length] = [];
+    }
+    categorized[categorized.length-1].push(sheetsEntry[i]);
+  }
+  return categorized;
+}
+
+function renderForm(categorized){ // レンダリング用の関数
+  var target = $('.formSubmit');
+  categorized.forEach(function(areaCats){
+    target.before('<h2>'+areaCats[0].gs$cell.$t+'</h2>');
+    target.before('<dl>');
+    for(var i = 1; i &lt; areaCats.length; i+=2){
+      target.before('<dt><label><input name="cats" type="checkbox" />'+areaCats[i].gs$cell.$t+'</label></dt>');
+      target.before('<dd>原産地：'+areaCats[i+1].gs$cell.$t+'</dd>');
+    }
+    target.before('</dl>');
+  });
+}
 
 function result(data){
   alert('function result was called.');

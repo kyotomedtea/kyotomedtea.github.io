@@ -12,7 +12,7 @@
   $(document).ready(function(){
     var docid = "137rAVHaZkPn8Lv0RSYqFTXSV8GyE7ywOecldS2Im_7Q";
     var jsonURL = "https://spreadsheets.google.com/feeds/cells/" + docid + "/od6/public/values?alt=json";
-    alert('The document is ready.4');
+    alert('The document is ready.5');
     $.ajax({
     type: 'GET',
     url: jsonURL,
@@ -20,8 +20,9 @@
     cache: false,
     success: function(data){ // 通信が成功した時
       var sheetsEntry = data.feed.entry; // 実データ部分を取得
-      alert(sheetsEntry);
-      categorized = catedorizeData(sheetsEntry); // データを整形して配列で返す
+      //alert(sheetsEntry); //これは動作した
+      alert(JSON.stringify(sheetsEntry));
+      categorized = categorizeData(sheetsEntry); // データを整形して配列で返す
       renderForm(categorized); // レンダリング用の関数を呼ぶ
     },
     error: function(){ // 通信が失敗した時

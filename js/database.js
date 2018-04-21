@@ -7,16 +7,14 @@ var myrec=
   {"no":"4","name":"name4","score":"32"}
 ];
 
-var docid = "137rAVHaZkPn8Lv0RSYqFTXSV8GyE7ywOecldS2Im_7Q";
-var jsonURL = "https://spreadsheets.google.com/feeds/cells/" + docid + "/od6/public/values?alt=json";
 
-function catedorizeData(sheetsEntry){ // データを整形して配列で返す
+function categorizeData(sheetsEntry){ // データを整形して配列で返す
   var categorized = [];
-  for(var i = 0; i &lt; sheetsEntry.length; i++) {
+  for(var i = 0; i < sheetsEntry.length; i++){
     var dataCol = sheetsEntry[i].gs$cell.col;
     var dataRow = sheetsEntry[i].gs$cell.row;
 
-    if(dataCol == 1 &amp;&amp; dataRow != sheetsEntry[i+1].gs$cell.row){
+    if(dataCol == 1 && dataRow != sheetsEntry[i+1].gs$cell.row){
       categorized[categorized.length] = [];
     }
     categorized[categorized.length-1].push(sheetsEntry[i]);

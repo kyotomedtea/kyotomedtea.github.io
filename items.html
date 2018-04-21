@@ -7,9 +7,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="js/database.js"></script>
+  <script>//読み込み時
+  $(document).ready(function(){
+    alert('The document is ready.');
+    //google.script.run.withSuccessHandler(result).getDBasJSON();
+    //    google.script.run
+    //    .withSuccessHandler(result)
+    //    .withFailureHandler(failed)
+    //    .getDBasJSON(); //ページが読み込まれたらすぐにデータベースをゲットし、そのJSONデータを関数resultに渡す　　失敗したときのメソッドを考える必要がある
+  });
+  </script>
 </head>
-
-<script></script>
 
 <body>
   <h1>京都大学医学部茶道部　道具データベース</h1>

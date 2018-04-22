@@ -9,20 +9,6 @@ var myrec=
 
 
 
-
-function renderForm(categorized){ // レンダリング用の関数
-  var target = $('.formSubmit');
-  categorized.forEach(function(areaCats){
-    target.before('<h2>'+areaCats[0].gs$cell.$t+'</h2>');
-    target.before('<dl>');
-    for(var i = 1; i &lt; areaCats.length; i+=2){
-      target.before('<dt><label><input name="cats" type="checkbox" />'+areaCats[i].gs$cell.$t+'</label></dt>');
-      target.before('<dd>原産地：'+areaCats[i+1].gs$cell.$t+'</dd>');
-    }
-    target.before('</dl>');
-  });
-}
-
 function result(data){
   alert('function result was called.');
   originalJSON = JSON.parse(data); //JSONオブジェクトに変換

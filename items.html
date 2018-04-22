@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="js/database.js"></script>
   <script>
@@ -29,7 +30,7 @@
 　}); //$(document).readyの終了
 
   function JSON2HTML(json){
-    var HTMLtable = "<table><th>カテゴリ</th><th>名称</th><th>画像</th><th>説明</th>";
+    var HTMLtable = "<table id = \"db_table\"><th>カテゴリ</th><th>名称</th><th>画像</th><th>説明</th>";
     for (i = 0; i < json.length; i++) {
       HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
       HTMLtable += "<td>" + json[i]["name"] + "</td>";
@@ -37,6 +38,7 @@
       HTMLtable += "<td>" + json[i]["description"] + "</td></tr>";
     } //forループ終了
     HTMLtable += "</table>";
+    document.getElementById("numberOfResults").innerHTML = "<p>該当データ数：" + json.length + "件</p>";
     document.getElementById("DBcontents").innerHTML = HTMLtable;
   }
 
@@ -53,14 +55,27 @@
     }
   }
 
+  $(function(){
+    $("input[type=text]").keypress(function(ev) {
+      if ((ev.which && ev.which === 13) ||
+          (ev.keyCode && ev.keyCode === 13)) {
+        modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.search.value);
+      } else {
+        return true;
+      }
+    });
+  });
+
   </script>
+
+
 </head>
 
 <body>
   <h1 id="h1_database">京都大学医学部茶道部｜道具データベース</h1>
 
   <hr />
-  <form id="kind_search_form" name="kind_search_form">
+  <form id="kind_search_form" name="kind_search_form"> <!--onsubmit="return false;"-->
     道具種別：
     <select id="kind" name="kind">
       <option value="全て">全て</option>
@@ -74,13 +89,14 @@
     </select><br/>
     検索ワード：
     <input type="text" id="search" name="search">
+    <input type="reset" value="リセット">
+    <input type="text" name="dummy" style="display:none;"><!-- エンターキーで再読込させないため -->
   </form>
 
-  <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.search.value)">データベース読込</button>
+  <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.search.value)" id="readDB" name="readDB">データベース読込</button>
 
+  <div id="numberOfResults"></div> <!--numberOfResults-->
   <div id="DBcontents"></div> <!--DBcontents-->
-  <table id="DB-table"></table>
-
 
 </body>
 

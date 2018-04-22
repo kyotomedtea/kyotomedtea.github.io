@@ -685,4 +685,8 @@ footer {
     #db_table {
       font-size: 76%;
     }
+    input[type=text], select{
+      font-size: 16px;
+      transform: scale(0.8);
+  }
 }

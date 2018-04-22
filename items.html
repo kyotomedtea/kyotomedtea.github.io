@@ -9,51 +9,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="js/database.js"></script>
   <script>
-
-  function categorizeData(sheetsEntry){ // データを整形して配列で返す
-    alert('sheetsEntry.length: ' + sheetsEntry.length);
-    alert('sheetsEntry[2]: ' + sheetsEntry[2]);
-    var categorized = [];
-    for(var i = 0; i < sheetsEntry.length; i++) {
-      var dataCol = sheetsEntry[i].gs$cell.col;
-      var dataRow = sheetsEntry[i].gs$cell.row;
-
-      if(dataCol == 1 && dataRow != sheetsEntry[i+1].gs$cell.row){
-        categorized[categorized.length] = [];
-      }
-      categorized[categorized.length - 1].push(sheetsEntry[i]);
-    }
-    alert(categorized);
-    return categorized;
-  }
-
-$(document).ready(function(){  //読み込み時
+　var originalJSON;
+　$(document).ready(function(){  //読み込み時
     var jsonURL = "https://script.google.com/macros/s/AKfycbwzEIf805yqL4ptzS9tdY8Xd5_I6rTV0dH-HebDY2-SFL1KkBR-/exec";
-    alert('The document is ready.8');
+    //alert('The document is ready.8');
     $.ajax({
       type: 'GET',
       url: jsonURL,
       dataType: 'json',
       cache: false,
       success: function(data){ // 通信が成功した時
+        originalJSON = data;
         JSON2HTML(data);
-        //var sheetsEntry = data; // 実データ部分を取得
-        //alert(JSON.stringify(sheetsEntry));
-        //categorized = categorizeData(sheetsEntry); // データを整形して配列で返す
-        //renderForm(categorized); // レンダリング用の関数を呼ぶ
       },
       error: function(){ // 通信が失敗した時
-        alert('error');
+        alert('An unexpected error occured.');
       }
    }); //$.ajax終了
-}); //$(document).readyの終了
-
-
+　}); //$(document).readyの終了
 
   function JSON2HTML(json){
-    var titleString = Object.keys(json[0]);
-    //alert(titleString[i]);
-    //alert(titleString.length);
     var HTMLtable = "<table><th>カテゴリ</th><th>名称</th><th>画像</th><th>説明</th>";
     for (i = 0; i < json.length; i++) {
       HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
@@ -63,11 +38,21 @@ $(document).ready(function(){  //読み込み時
     } //forループ終了
     HTMLtable += "</table>";
     document.getElementById("DBcontents").innerHTML = HTMLtable;
-    alert(HTMLtable);
   }
 
-  function modifyJSON(){
+  function modifyJSON(json, kind, search){
+    var modifiedJSON　= [];
+    for (i = 0; i < json.length; i++) {
+      if ((json[i]["category"] == kind || kind == "全て") && (json[i]["name"].indexOf(search) != -1 || json[i]["description"].indexOf(search) != -1)) {
+        modifiedJSON.push(json[i]);
+      }
+    } //forループ終了
+    JSON2HTML(modifiedJSON);
+    if (!modifiedJSON.length) {
+      alert('該当する道具ないよ(´・ω・｀)');
+    }
   }
+
   </script>
 </head>
 
@@ -75,24 +60,23 @@ $(document).ready(function(){  //読み込み時
   <h1 id="h1_database">京都大学医学部茶道部｜道具データベース</h1>
 
   <hr />
-  <form id="myForm">
+  <form id="kind_search_form" name="kind_search_form">
     道具種別：
     <select id="kind" name="kind">
-      <option value="%">全て</option>
+      <option value="全て">全て</option>
       <option value="茶碗">茶碗</option>
       <option value="棗">棗</option>
       <option value="茶杓">茶杓</option>
       <option value="蓋置">蓋置</option>
       <option value="仕覆">仕覆</option>
       <option value="菓子器">菓子器</option>
+      <option value="花入れ">花入れ</option>
     </select><br/>
     検索ワード：
     <input type="text" id="search" name="search">
   </form>
 
-  <button type="submit" onclick="failure()">データベース読込</button>
-  <input type="button" value="failed" onClick="alert('テスト')">
-  <input type="button" value="サンプル" onClick="alert('タグに直接指定')">
+  <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.search.value)">データベース読込</button>
 
   <div id="DBcontents"></div> <!--DBcontents-->
   <table id="DB-table"></table>

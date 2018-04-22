@@ -20,38 +20,3 @@ function result(data){
 function failure(){
   alert('データベースの読み込みに失敗しました。');
 }
-
-function callbackFunc(){
-  //今のところこいつはダミー
-  document.getElementById("DBcontents").innerHTML = "";
-}
-
-
-function JSON2HTML(json){
-  //alert(json.length); //これは動く
-  //alert("Object.keys(json[0])" + Object.keys(json[0])); //これは動く
-  //alert("json[0][category]: " + json[0]["category"]); //これは動く
-  var index[] = Object.getOwnPropertyNames(json[0]);
-  alert('index: ' + index);
-  var HTMLtable = "<table>";
-  for(key in Object.keys(json[0])){
-    alert(key); //ホントはkeyにID,category,descriptionとかなってほしいのになんでデランのかな
-    alert(json[0]["category"]);
-    HTMLtable += "<th>" + key + "</th>" //テーブルの見出しを作る
-  }
-  alert("function JSON2HTML" + HTMLtable);
-  for (i = 0; i < json.length; i++) {
-  rows += "<tr>";
-  for (j = 0; j < json[i].length; j++) {
-  rows += "<td>";
-  rows += json[i][j];
-  rows += "</td>";
-  }
-  rows += "</tr>";
-  }
-  HTMLtable += "</html>";
-  document.getElementById("DBcontents").innerHTML = HTMLtable;
-}
-
-function modifyJSON(){
-}

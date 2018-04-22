@@ -72,12 +72,12 @@
 </head>
 
 <body>
-  <h1 id="h1_database">京都大学医学部茶道部｜道具データベース</h1>
+  <h1 id="h1_database">京都大学医学部茶道部　<wbr>道具データベース</h1>
 
   <hr />
   <form id="kind_search_form" name="kind_search_form"> <!--onsubmit="return false;"-->
     道具種別：
-    <select id="kind" name="kind">
+    <select id="kind" name="kind" class="kensaku">
       <option value="全て">全て</option>
       <option value="茶碗">茶碗</option>
       <option value="棗">棗</option>
@@ -88,13 +88,13 @@
       <option value="花入れ">花入れ</option>
     </select><br/>
     検索ワード：
-    <input type="text" id="search" name="search">
-    <input type="reset" value="リセット">
+    <input type="text" id="search" name="search" class="kensaku">
+    <input type="reset" value="リセット" class="button">
     <input type="text" name="dummy" style="display:none;"><!-- エンターキーで再読込させないため -->
   </form>
 
-  <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.search.value)" id="readDB" name="readDB">データベース読込</button>
-
+  <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.search.value)" id="readDB" name="readDB" class="button">データベース読込</button>
+  <hr />
   <div id="numberOfResults"></div> <!--numberOfResults-->
   <div id="DBcontents"></div> <!--DBcontents-->
 

@@ -180,6 +180,7 @@ table, th, td {
   border:none;
 	border-bottom: solid 1px silver;
   border-top: solid 1px silver;
+  vertical-align: middle;
 }
 address{
 	padding:5px;
@@ -211,30 +212,44 @@ address{
   background: #f0fff0;
 }
 #db_table tr th:nth-child(1){
-  width: 15%;
+  width: 18%;
 }
 #db_table tr th:nth-child(2){
-  width: 15%;
+  width: 18%;
 }
 #db_table tr th:nth-child(3){
   width: 40%;
 }
 #db_table tr th:nth-child(4){
-  width: 30%;
+  width: 24%;
 }
 #db_table tr td:nth-child(1){
-  width: 15%;
+  width: 18%;
 }
 #db_table tr td:nth-child(2){
-  width: 15%;
+  width: 18%;
 }
 #db_table tr td:nth-child(3){
   width: 40%;
 }
 #db_table tr td:nth-child(4){
-  width: 30%;
+  width: 24%;
 }
 
+.kensaku{
+  padding:5px;
+  border:solid 1px #ccc;
+  margin:5px;
+  color:#333;
+  width:130px;
+}
+.button{
+  border:solid 1px #ccc;
+  padding:5px;
+  margin:5px;
+  color:#333;
+  cursor:pointer;
+}
 /*================================================
  *  ヘッダー
  ================================================*/
@@ -666,5 +681,8 @@ footer {
     }
     #subnav li a:hover {
       background:#f7d0cb;
+    }
+    #db_table {
+      font-size: 78%;
     }
 }

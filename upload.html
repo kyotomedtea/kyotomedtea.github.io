@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+    <form>
+      <label for="img1">画像ファイル1</label>
+      <input type="file" name="img1" id="img1" accept="image/*" /> <!--multiple="multiple"-->
+      <label for="name1">名称1</label>
+      <input type="text" name="name1" id="name1" />
+    </form>
+    <button onclick="postJump()">送信</button>
+<div id="xxx"></div>
+
+
+
+<script type="text/javascript">
+var url = "https://script.google.com/macros/s/AKfycbyjXhlZAIF9zp-K4DenhtWlVlAjKVEmm0K8fMwpFbwGXswFLw/exec";
+var params = {};
+$("#img1").on("change", function() {
+    var file1 = this.files[0];
+    var fr1 = new FileReader();
+    fr1.onload = function(e) {
+        params.img1File = e.target.result.replace(/^.*,/, '');
+        params.img1FileName = file1.name;
+    }
+    fr1.readAsDataURL(file1);
+});
+
+function postJump(){
+    var html = "<form method = \"post\" action = \"" + url + "\" id = \"postjump\" style = \"display: none;\">";
+    Object.keys(params).forEach(function (key) {
+        html += "<input type = \"hidden\" name = \"" + key + "\" value = \"" + params[key] + "\">";
+    });
+    html += "</form>";
+    console.log(html);
+    $("body").append(html);
+    $("#postjump").submit();
+    $("#postjump").remove();
+}
+
+function JSONP(json){
+  alert(json);
+  (function(){
+    location.href = "./upload.html";
+  }());
+}
+
+// var dataUrl;
+// var objFile = document.getElementById("img1");
+// objFile.addEventListener("change", function(evt) {
+//     var file = evt.target.files;
+//     var reader = new FileReader();
+//     reader.readAsDataURL(file[0]);
+//
+//     //ファイルの読み込みが終わったら
+//     reader.onload = function() {
+//         dataUrl = reader.result;
+//         document.getElementById("xxx").innerHTML="<img src='"+dataUrl+"' alt='none'>";
+//     };
+// }, false);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<input type="file" id="selfile"><br>
+<textarea id="dturl" readonly></textarea>
+<div id="bg"></div>
+
+<style type="text/css">
+textarea{ width:100%; height:100px; margin:10px 0px }
+div#bg{ width:360px;  height:240px; border:1px solid black; overflow:auto }
+</style>
+
+<script>
+var obj1 = document.getElementById("selfile");
+
+obj1.addEventListener("change", function(evt){
+  var file = evt.target.files;
+  var reader = new FileReader();
+
+  //dataURL形式でファイルを読み込む
+  reader.readAsDataURL(file[0]);
+
+  //ファイルの読込が終了した時の処理
+  reader.onload = function(){
+    var dataUrl = reader.result;
+
+    //読み込んだ画像とdataURLを書き出す
+    document.getElementById("bg").innerHTML = "<img src='" + dataUrl + "'>";
+    document.getElementById("dturl").value = dataUrl;
+  }
+},false);
+</script>
+</html>

@@ -13,7 +13,7 @@
 　var originalJSON;
 　$(document).ready(function(){  //読み込み時
     var jsonURL = "https://script.google.com/macros/s/AKfycbwzEIf805yqL4ptzS9tdY8Xd5_I6rTV0dH-HebDY2-SFL1KkBR-/exec";
-    //alert('The document is ready.8');
+    //var jsonURL = "https://script.google.com/macros/s/AKfycbx-dueD6pv4UmFP82zYsE803Nzh4MYY-Uaqa7B7HLhFK-cAig/exec"; //新しい方
     $.ajax({
       type: 'GET',
       url: jsonURL,
@@ -34,7 +34,7 @@
     for (i = 0; i < json.length; i++) {
       HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
       HTMLtable += "<td>" + json[i]["name"] + "</td>";
-      HTMLtable += "<td><img src = \"" + json[i]["link"] + "\">" + "</td>";
+      HTMLtable += "<td><img src = \"" + json[i]["image1"] + "\">" + "</td>";
       HTMLtable += "<td>" + json[i]["description"] + "</td></tr>";
     } //forループ終了
     HTMLtable += "</table>";
@@ -51,7 +51,7 @@
     } //forループ終了
     JSON2HTML(modifiedJSON);
     if (!modifiedJSON.length) {
-      alert('該当する道具ないよ(´・ω・｀)');
+      alert('該当する道具にゃい(ΦωΦ)');
     }
   }
 
@@ -83,6 +83,14 @@
       <option value="棗">棗</option>
       <option value="茶杓">茶杓</option>
       <option value="蓋置">蓋置</option>
+      <option value="水指">水指</option>
+      <option value="建水">建水</option>
+      <option value="棚">棚</option>
+      <option value="風炉">風炉</option>
+      <option value="釜">釜</option>
+      <option value="釜敷">釜敷</option>
+      <option value="香合">香合</option>
+      <option value="軸・色紙">軸・色紙</option>
       <option value="仕覆">仕覆</option>
       <option value="菓子器">菓子器</option>
       <option value="花入れ">花入れ</option>

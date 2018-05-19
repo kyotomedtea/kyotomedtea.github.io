@@ -10,11 +10,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="js/jquery.colorbox.js" type="text/javascript"></script>
   <link href="css/colorbox.css" type="text/css" rel="stylesheet" media="all" />
-  <script>
-    $(function() {
-      $(".item_img").colorbox();
-    });
-  </script>
   <script src="js/database.js"></script>
   <script>
 　var originalJSON;
@@ -85,8 +80,6 @@
   });
 
   </script>
-
-
 </head>
 
 <body>
@@ -123,7 +116,11 @@
   <hr />
   <div id="numberOfResults"></div> <!--numberOfResults-->
   <div id="DBcontents"></div> <!--DBcontents-->
-
+  <script>
+    $(function(){
+      $(".item_img").colorbox();
+    });
+  </script>
 </body>
 
 

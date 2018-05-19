@@ -38,9 +38,9 @@
       HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
       HTMLtable += "<td>" + json[i]["name"] + "</td>";
       HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" data-lightbox = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image1"] + "\"></a>"; //</td閉じてない>
-      if(!json[i]["image2"]){
+      if(json[i]["image2"]){
         HTMLtable += "<div style=\"display: none;\"><a href = \"" + json[i]["image2"] + "\" data-lightbox = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image2"] + "\"></a>";
-        if(!json[i]["image3"]){
+        if(json[i]["image3"]){
           HTMLtable += "<a href = \"" + json[i]["image3"] + "\" data-lightbox = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image3"] + "\"></a>";
         }
         HTMLtable += "</div>";

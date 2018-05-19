@@ -23,11 +23,11 @@ function JSON2HTML(json){
     var id = "ID" +  i;
     HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
     HTMLtable += "<td><a onclick=\"OnLinkClick(" + i + ");\">" + json[i]["name"] + "</a></td>";
-    HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + "\" title = \"" + json[i]["name"] + "\" id = \"" + id + "\"><img src = \"" + json[i]["image1"] + "\"></a>"; //</td閉じてない>
+    HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + i + "\" title = \"" + json[i]["name"] + "\" id = \"" + id + "\"><img src = \"" + json[i]["image1"] + "\"></a>"; //</td閉じてない>
     if(json[i]["image2"]){
-      HTMLtable += "<div style=\"display: none;\"><a href = \"" + json[i]["image2"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + "\" title = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image2"] + "\"></a>";
+      HTMLtable += "<div style=\"display: none;\"><a href = \"" + json[i]["image2"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] +　i + "\" title = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image2"] + "\"></a>";
       if(json[i]["image3"]){
-        HTMLtable += "<a href = \"" + json[i]["image3"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + "\" title = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image3"] + "\"></a>";
+        HTMLtable += "<a href = \"" + json[i]["image3"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + i + "\" title = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image3"] + "\"></a>";
       }
       HTMLtable += "</div>";
     }

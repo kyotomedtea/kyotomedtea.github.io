@@ -210,6 +210,7 @@ address{
 #db_table th{
   color: #006e54;
   background: #f0fff0;
+  font-size: 0.75em;
 }
 #db_table tr th:nth-child(1){
   width: 18%;
@@ -249,6 +250,9 @@ address{
   margin:5px;
   color:#333;
   cursor:pointer;
+}
+#search{
+  width: 180px;
 }
 /*================================================
  *  ヘッダー

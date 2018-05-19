@@ -34,8 +34,6 @@
   function JSON2HTML(json){
     var HTMLtable = "<table id = \"db_table\"><th>カテゴリ</th><th>名称</th><th>画像</th><th>説明</th>";
     for (i = 0; i < json.length; i++) {
-      console.log("2: " + json[i]["image2"]);
-      console.log("3: " + json[i]["image3"]);
       HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
       HTMLtable += "<td>" + json[i]["name"] + "</td>";
       HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image1"] + "\"></a>"; //</td閉じてない>
@@ -50,6 +48,9 @@
       HTMLtable += "<td>" + json[i]["description"] + "</td></tr>";
     } //forループ終了
     HTMLtable += "</table>";
+    $(function(){
+      $(".itemimg").colorbox();
+    });
     console.log(HTMLtable);
     document.getElementById("numberOfResults").innerHTML = "<p>該当データ数：" + json.length + "件</p>";
     document.getElementById("DBcontents").innerHTML = HTMLtable;
@@ -77,6 +78,10 @@
         return true;
       }
     });
+  });
+
+  $(function(){
+    $(".itemimg").colorbox();
   });
 
   </script>
@@ -107,7 +112,7 @@
       <option value="花入れ">花入れ</option>
     </select><br/>
     検索ワード：
-    <input type="text" id="search" name="search" class="kensaku" placeholder="名称or説明から検索可">
+    <input type="text" id="search" name="search" class="kensaku" placeholder="名称or説明から検索可"><br />
     <input type="reset" value="リセット" class="button">
     <input type="text" name="dummy" style="display:none;"><!-- エンターキーで再読込させないため -->
   </form>
@@ -116,11 +121,6 @@
   <hr />
   <div id="numberOfResults"></div> <!--numberOfResults-->
   <div id="DBcontents"></div> <!--DBcontents-->
-  <script>
-    $(function(){
-      $(".itemimg").colorbox();
-    });
-  </script>
 </body>
 
 

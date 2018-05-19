@@ -10,7 +10,7 @@
 	defaults = {
 		// data sources
 		html: false,
-		photo: false,
+		photo: true,
 		iframe: false,
 		inline: false,
 
@@ -21,7 +21,7 @@
 		width: false,
 		initialWidth: "600",
 		innerWidth: false,
-		maxWidth: false,
+		maxWidth: "100%",
 		height: false,
 		initialHeight: "450",
 		innerHeight: false,

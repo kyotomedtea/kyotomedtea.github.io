@@ -47,6 +47,7 @@
       HTMLtable += "<td>" + json[i]["description"] + "</td></tr>";
     } //forループ終了
     HTMLtable += "</table>";
+    console.log(HTMLtable);
     document.getElementById("numberOfResults").innerHTML = "<p>該当データ数：" + json.length + "件</p>";
     document.getElementById("DBcontents").innerHTML = HTMLtable;
   }

@@ -35,7 +35,7 @@
     var HTMLtable = "<table id = \"db_table\"><th>カテゴリ</th><th>名称</th><th>画像</th><th>説明</th>";
     for (i = 0; i < json.length; i++) {
       HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
-      HTMLtable += "<td>" + json[i]["name"] + "</td>";
+      HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + "\">" + json[i]["name"] + "</a></td>";
       HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image1"] + "\"></a>"; //</td閉じてない>
       if(json[i]["image2"]){
         HTMLtable += "<div style=\"display: none;\"><a href = \"" + json[i]["image2"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image2"] + "\"></a>";

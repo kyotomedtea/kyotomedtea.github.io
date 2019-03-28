@@ -27,7 +27,7 @@ function JSON2HTML(json){ //JSONをHTMLのtableに整形する
     HTMLtable += "<tr><td>" + json[i]["category"] + "</td>";
     HTMLtable += "<td><a onclick=\"OnLinkClick(" + i + ");\">" + json[i]["name"] + "</a></td>";
     //名前をクリックすると、画像をクリックしたのと同じ動作をする（colorboxで表示する画像がダブらないように）
-    HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + i + "\" title = \"" + json[i]["name"] + "\" id = \"" + id + "\"><img src = \"" + json[i]["image1"] + "\"></a>";
+    HTMLtable += "<td><a href = \"" + json[i]["image1"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] + i + "\" title = \"" + json[i]["name"] + "\" id = \"" + id + "\"><img src = \"" + json[i]["image0"] + "\"></a>";
     //</td>閉じてないの注意。class="itemimg"に対してcolorboxが動作。rel=同じIDに対して同じグループとしてcolorboxが動作。
     if(json[i]["image2"]){ //2個目の画像
       HTMLtable += "<div style=\"display: none;\"><a href = \"" + json[i]["image2"] + "\" class = \"itemimg\" rel = \"" + json[i]["name"] +　i + "\" title = \"" + json[i]["name"] + "\"><img src = \"" + json[i]["image2"] + "\"></a>";

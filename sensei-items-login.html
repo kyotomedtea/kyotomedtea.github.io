@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang=ja>
+<head>
+<title>β版[ログイン]小泉先生道具データベース</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="css/style.css">
+<!-- 取り敢えずパスワードは「hogehoge」 -->
+<!-- ハッシュ化用のライブラリ -->
+<script src="sha256.js"></script>
+<script src="js/sensei_items_login.js"></script>
+</head>
+<body>
+<h1>
+<font color="red">β版</font>
+京都大学医学部茶道部　小泉先生道具データベース</h1><br>
+<h2>ログイン</h2><br>
+<input id="sw_password" type="password"></input>
+<input id="sw_button" type="button" value="ログイン" onClick="SWAuthUser();"></input>
+<div id="sw_result">パスワードを入力してください。</div><br>
+<h3>注意事項</h3>
+<ul>
+<li>不具合などがあればお知らせください。</li>
+<li>認証情報はブラウザを閉じるまで保存されます。</li>
+<li>Cookie・javascriptが切になっていると正常に動作しません。</li>
+<li>未完成です。</li>
+<li>などなど</li>
+</ul>
+</body>

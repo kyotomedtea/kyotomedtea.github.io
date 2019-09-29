@@ -1,5 +1,5 @@
 //ハッシュ化したパスワード。適宜変更する。
-var password = '4c716d4cf211c7b7d2f3233c941771ad0507ea5bacf93b492766aa41ae9f720d'
+var password = 'f0fd61511fd1179395d4a04292f13f48f3d1160c1ed6f07acefb2cc052509fa0'
 //Cookieを読み込み、認証済みならばデータベースページに転送するscript
 var Cookie_Str = document.cookie;
 var Cookie_Str = Cookie_Str + ";";

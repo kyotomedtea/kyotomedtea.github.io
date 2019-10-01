@@ -11,10 +11,11 @@ var Cookie_start = Cookie_Str.indexOf(Cookie_name);
 var Cookie_end = Cookie_Str.indexOf(";");
 var Cookie_data = Cookie_start + Cookie_name.length+1;
 alert(Cookie_Str);
-alert(Cookie_Str.substring(Cookie_data,Cookie_end))
+alert(Cookie_Str.substring(Cookie_data,Cookie_end));
 //Cookieを探し、値がKUMTTC_sensei_database=(正しいハッシュ)ならば認証済み。それ以外なら、未認証なのでログインへ。
 if (Cookie_Str.indexOf(Cookie_name) != -1){
 if (Cookie_Str.substring(Cookie_data,Cookie_end) == password){}else{
-window.location.href = "sensei-items-login.html"
+window.location.href = "sensei-items-login.html";
 }}else{
-window.location.href = "sensei-items-login.html"}
+window.location.href = "sensei-items-login.html";
+}

@@ -10,7 +10,7 @@ var Cookie_start = Cookie_Str.indexOf(Cookie_name);
 //終了位置
 var Cookie_end = Cookie_Str.indexOf(";");
 var Cookie_data = Cookie_start + Cookie_name.length+1;
-//alert(Cookie_Str);
+alert(Cookie_Str);
 alert(Cookie_Str.substring(Cookie_data,Cookie_end));
 //Cookieを探し、値がKUMTTC_sensei_database=(正しいハッシュ)ならば認証済み。それ以外なら、未認証なのでログインへ。
 if (Cookie_Str.indexOf(Cookie_name) != -1){

@@ -10,7 +10,8 @@ var Cookie_start = Cookie_Str.indexOf(Cookie_name);
 //終了位置
 var Cookie_end = Cookie_Str.indexOf(";");
 var Cookie_data = Cookie_start + Cookie_name.length+1;
-alert(Cookie_Str.substring(Cookie_data,Cookie_end));
+var Cookie_pass = Cookie_Str.substring(Cookie_data,Cookie_end);
+alert(Cookie_pass);
 alert("test");
 //Cookieを探す
 if (Cookie_Str.indexOf(Cookie_name) != -1){

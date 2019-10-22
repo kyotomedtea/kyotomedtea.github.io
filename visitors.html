@@ -11,7 +11,28 @@
 </head>
 <body>
   <h1 id = "title">京都大学医学部茶道部　<wbr>お客様リスト</h1>
-    <br></br>
+    <hr />
+    <input type="button" value="RELOAD" onclick="window.location.reload(true);" /><br>
+    <form id="kind_search_form" name="kind_search_form"> <!--onsubmit="return false;"-->
+      Day:
+      <select id="day" name="day" class="kensaku">
+        <option value="全て">全て</option>
+        <option value="土">土</option>
+        <option value="日">日</option>
+      </select>
+      場所:
+      <select id="kind" name="kind" class="kensaku">
+        <option value="全て">全て</option>
+        <option value="待合/OBOG席">待合/OBOG席</option>
+        <option value="薄茶">薄茶</option>
+        <option value="濃茶">濃茶</option>
+        <option value="一献">一献</option>
+        <option value="来てない">来てない</option>
+        <option value="席終了">席終了</option>
+      </select>
+      <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.day.value)">読込</button>
+    </form>
+    <hr />
     <div id="wrap"></div>  
 </body>
 </html>

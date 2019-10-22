@@ -16,7 +16,7 @@ $(document).ready(function(){  //読み込み時に動作
             JSON2HTML(data);
           },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-            alert('error!!!');
+            alert('Error');
         　　console.log("XMLHttpRequest : " + XMLHttpRequest.status);
         　　console.log("textStatus     : " + textStatus);
         　　console.log("errorThrown    : " + errorThrown.message);
@@ -47,4 +47,14 @@ function JSON2HTML(json){ //JSONをHTMLのtableに整形する
     HTMLtable += "</table>";
     var div = document.getElementById("wrap");
     div.innerHTML = HTMLtable;
-  }
+}
+
+function modifyJSON(json, kind, day){ //場所に応じてJSONをいじる
+    var modifiedJSON　= [];
+    for (i = 0; i < json.length; i++) {
+      if ((json[i]["where"] == kind || kind == "全て") && (json[i]["day"] == day || day == "全て")) {
+        modifiedJSON.push(json[i]);
+      }
+    } //forループ終了
+    JSON2HTML(modifiedJSON);
+}

@@ -168,7 +168,8 @@ table {
 }
 th {
   padding:10px;
-  background-color: #66CC00;
+  border:none;
+    border-bottom: solid 2px #66CC00;
   font-weight: bold;
   text-align:center;
   vertical-align:middle;
@@ -176,12 +177,11 @@ th {
 }
 td {
   padding:10px;
+  border:none;
+    border-bottom: solid 1px silver;
   text-align:center;
 }
 table, th, td {
-  border:none;
-	border-bottom: solid 1px silver;
-  border-top: solid 1px silver;
   vertical-align: middle;
 }
 address{
@@ -204,7 +204,7 @@ address{
   margin: 10px;
 }
 tr.colored{
-    background-color: #9BF9CC;
+    background-color: #eee;
 }
 tr.unknown{
     background-color: #CBFFD3;

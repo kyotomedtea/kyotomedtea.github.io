@@ -15,6 +15,8 @@
 <body>
   <h1 id="h1_database">京都大学医学部茶道部　<wbr>道具データベース</h1>
   <hr />
+  小泉先生道具は、カテゴリが<font color='blue'>青字</font>になっています。
+  <br/><hr/>
   <form id="kind_search_form" name="kind_search_form"> <!--onsubmit="return false;"-->
     カテゴリ：
     <select id="kind" name="kind" class="kensaku">
@@ -38,12 +40,21 @@
       <option value="懐石道具">懐石道具</option>
       <option value="その他">その他</option>
     </select><br/>
+    所蔵：<!-- 所蔵を検索するため、追加 -->
+    <input type="radio" name="where" value="全て" id="where_all" checked>
+    <label for="where_all">全て</label>
+    <input type="radio" name="where" value="部" id="where_club">
+    <label for="where_club">部</label>
+    <input type="radio" name="where" value="小泉先生" id="where_koizumi">
+    <label for="where_koizumi">小泉先生</label><br/>
     検索ワード：
     <input type="text" id="search" name="search" class="kensaku" placeholder="名称or説明から検索可"><br />
     <input type="reset" value="リセット" class="button">
     <input type="text" name="dummy" style="display:none;"><!-- エンターキーで再読込させないため -->
   </form>
-  <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value, document.forms.kind_search_form.search.value)" id="readDB" name="readDB" class="button">データベース読込</button>
+  <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value,
+  document.forms.kind_search_form.where.value,
+ document.forms.kind_search_form.search.value)" id="readDB" name="readDB" class="button">データベース読込</button>
   <hr />
   <div id="numberOfResults"></div> <!--numberOfResults-->
   <div id="DBcontents"></div> <!--DBcontents-->

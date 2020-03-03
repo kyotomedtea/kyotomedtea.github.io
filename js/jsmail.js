@@ -30,3 +30,10 @@ function secretaddress3() {
 	var mt = String.fromCharCode(109,97,105,108,116,111,58);
 	document.write('<a href="'+ mt + ma + '">' + ma + '</a>');
 }
+
+//2020年度新歓用
+function secretaddress_2020() {
+	var ma = String.fromCharCode(107,121,111,116,111,46,109,101,100,116,101,97,50,48,50,48,64,103,109,97,105,108,46,99,111,109);
+	var mt = String.fromCharCode(109,97,105,108,116,111,58);
+	document.write('<a href="'+ mt + ma + '">' + ma + '</a>');
+}

@@ -4,9 +4,202 @@
   <title>京医茶道部｜ポータル</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
+    
     <style>
       h2{margin-top: 2em;}
+/*================================================
+ *  CSSリセット
+ ================================================*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,,main,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;font-weight:normal;}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+/*================================================
+ *  一般・共通設定
+ ================================================*/
+body {
+  width:1080px;
+  margin:0 auto;
+  font-size:14px;
+  color:#666;
+  font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  line-height:1.6;
+}
+
+#main {
+  float:left;
+  width:740px;
+}
+
+#sub {
+  float:right;
+  width:300px;
+}
+
+
+a {
+  color:#006e54;
+}
+a:hover {
+  color:#3CC;
+	text-decoration:none;
+}
+
+h1 {
+  color:#006e54;
+  font-size:28px;
+  line-height:1.2;
+}
+
+h1 a{
+	text-decoration:none;
+}
+
+h2 {
+  margin-bottom:0.5em;
+  font-size:18px;
+  color:#006e54;
+  border-bottom:1px solid #006e54;
+	border-left:10px solid #006e54;
+	padding-left:0.8em;
+}
+
+h3 {
+  margin-bottom:0.25em;
+	margin-top:2em;
+  padding:2px 5px;
+  padding-left: 0.8em;
+  color:#006e54;
+  font-size:16px;
+	border-left:5px solid #006e54;
+}
+
+
+h4 {
+  margin-bottom:0.25em;
+  padding-left: 1em;
+  font-size:16px;
+  color:#006e54;
+}
+
+p {
+  margin:0 0 1em 0;
+}
+
+strong {
+  font-weight:bold;
+  color:#006e54;
+}
+
+ul,ol,dl {
+  margin:0 0 1em 0;
+}
+ul li {
+  list-style:disc;
+}
+ol li {
+  list-style:decimal;
+}
+li {
+  margin-left:2em;
+}
+
+dt {
+  margin-bottom:0.5em;
+	border-bottom:1px dotted #ddd;
+}
+
+dd {
+  margin-bottom:1em;
+}
+
+table {
+  margin-bottom:1em;
+  border-collapse:collapse;
+	border-spacing:0;
+}
+th {
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+  width: 30%;
+}
+td {
+  padding:10px;
+  text-align:left;
+}
+table, th, td {
+  border:none;
+	border-bottom: solid 1px silver;
+  border-top: solid 1px silver;
+  vertical-align: middle;
+}
+
+/*================================================
+ *  スマートフォン向けデザイン
+ ================================================*/
+@media screen and (max-width:779px) {
+    body {
+      box-sizing: border-box;
+      width:100%;
+      padding:0 10px;
+    }
+
+  	#map{
+  		  width:100%;
+  	}
+  	.wasuremono{
+  		  width:100%;
+  	}
+
+    header h1 {
+        margin-bottom:0;
+    }
+
+  	nav li{
+    		width:33.33%;
+    		font-size:90%;
+  	}
+
+    .tel {
+        position:relative;
+        text-align:right;
+    }
+
+    #main {
+      float:none;
+      width:100%;
+    }
+
+    #sub {
+      float:none;
+      width:100%;
+    }
+
+    .catalog {
+      margin-right:-2%;
+    }
+    .catalog li {
+      float:left;
+      width:23%;
+      margin:0 2% 2% 0;
+    }
+
+    .catalog li img {
+      width:100%;
+    }
+
+    .bnr {
+      overflow:hidden;
+      margin-right:-2%;
+    }
+
+    .bnr li {
+      float:left;
+      width:48%;
+      margin:0 2% 2% 0;
+    }
+    .bnr li img {
+      width:100%;
+    }
     </style>
 </head>
 <body>
@@ -14,7 +207,7 @@
 
 こちらはHTML版です。<a href="帛紗色見本.pdf">PDF版はこちら。</a>（注意：PDF版は色の再現度が劣ります。カラー印刷すると少しましになります。）
 <h2 id="色の選び方">色の選び方</h2>
-<p>下記は。数寄者なので、お席の趣向などがあれば自由に選んでよい。</p>
+<p>下記は<strong>原則</strong>。数寄者なので、お席の趣向などがあれば自由に選んでよい。</p>
 <h3 id="女性">女性</h3>
 <p>基本は赤。これは厄除けを表しており、男性のときめく色でもある。選ぶ際には着物の華やかさを活かす色が良い。</p>
 <p>→101, 102, 123あたりが綺麗。</p>
@@ -27,7 +220,7 @@
 <li><p>緑はちょっと偉め</p></li>
 </ul>
 <h2 id="色見本">色見本</h2>
-<p>注：あくまで再現であり、画面の性質などにより見え方が多少異なります。最終決定の前に部室にある実物を確認することをお勧めします。</p>
+<p>注：あくまで再現であり、画面の性質などにより見え方が多少異なります。<strong>最終決定の前に部室にある実物を確認することをお勧めします。</strong></p>
 <p><del>打ち消し線</del>は、2019年時点で在庫がなかったことを示します。</p>
 <table>
 <tbody>

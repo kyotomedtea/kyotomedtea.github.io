@@ -5,7 +5,7 @@ $(document).ready(function(){  //読み込み時に動作
   var jsonURL = "https://script.google.com/macros/s/AKfycbx-dueD6pv4UmFP82zYsE803Nzh4MYY-Uaqa7B7HLhFK-cAig/exec"; //新しい方
   //上記jsonURLはGoogleドライブ上にある、doGET関数を持つserver.gsのdeploy as web appのURL
 
-  alert('現在道具データベースは改修作業を行っています。一時的に意図せぬ動作になる場合があります。\n作業終了予定：5月26日')
+  alert('現在道具データベースは改修作業を行っています。一時的に意図せぬ動作になる場合があります。\n作業終了予定：5月31日')
   $.ajax({ //ajaxのGET方式でJSONデータを取りに行く
     type: 'GET',
     url: jsonURL,

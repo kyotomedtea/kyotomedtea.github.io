@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/popup.css">
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script src="js/jquery.colorbox.js" type="text/javascript"></script>
   <link href="css/colorbox.css" type="text/css" rel="stylesheet" media="all" />
+  <script src="js/qrcode.min.js" type="text/javascript"></script>
   <script src="js/database.js"></script>
 </head>
 <body>
   <h1 id="h1_database">京都大学医学部茶道部　<wbr>道具データベース</h1>
+    <span id="list_title"></span>
   <hr />
-  小泉先生道具は、カテゴリが<font color='blue'>青字</font>になっています。
-  <br/><hr/>
+  部の道具は、カテゴリが<font color='blue'>青字</font>になっています。
   <form id="kind_search_form" name="kind_search_form"> <!--onsubmit="return false;"-->
     カテゴリ：
     <select id="kind" name="kind" class="kensaku">
@@ -41,22 +43,48 @@
       <option value="その他">その他</option>
     </select><br/>
     所蔵：<!-- 所蔵を検索するため、追加 -->
-    <input type="radio" name="where" value="全て" id="where_all" checked>
-    <label for="where_all">全て</label>
-    <input type="radio" name="where" value="部" id="where_club">
-    <label for="where_club">部</label>
-    <input type="radio" name="where" value="小泉先生" id="where_koizumi">
-    <label for="where_koizumi">小泉先生</label><br/>
+      <input type="radio" name="storage" value="全て" id="storage_all" checked>
+      <label for="storage_all">全て</label>
+      <input type="radio" name="storage" value="部" id="storage_club">
+      <label for="storage_club">部</label>
+      <input type="radio" name="storage" value="小泉先生" id="storage_koizumi">
+      <label for="storage_koizumi">小泉先生</label>
+      <input type="radio" name="storage" value="中尾先生" id="storage_nakao">
+      <label for="storage_nakao">中尾先生</label>
+      <input type="radio" name="storage" value="八馬先生" id="storage_hachima">
+      <label for="storage_hachima">八馬先生</label>
+      <br/>
     検索ワード：
     <input type="text" id="search" name="search" class="kensaku" placeholder="名称or説明から検索可"><br />
+    その他：
+    <input type="checkbox" id="onlyselected"><label for="onlyselected">選択した道具のみ表示</label><br />
     <input type="reset" value="リセット" class="button">
     <input type="text" name="dummy" style="display:none;"><!-- エンターキーで再読込させないため -->
   </form>
   <button type="button" onclick="modifyJSON(originalJSON, document.forms.kind_search_form.kind.value,
-  document.forms.kind_search_form.where.value,
- document.forms.kind_search_form.search.value)" id="readDB" name="readDB" class="button">データベース読込</button>
+  document.forms.kind_search_form.storage.value,
+ document.forms.kind_search_form.search.value, document.forms.kind_search_form.onlyselected.checked)" id="readDB" name="readDB" class="button">データベース読込</button>
   <hr />
-  <div id="numberOfResults"></div> <!--numberOfResults-->
+  <span id="numberOfResults"></span> <!--numberOfResults-->
+  <span id="selectedConsole"></span>
+    <!--チェックした道具リストの共有メニュー-->
+    <div class="popup_wrap">
+      <input id="trigger" type="checkbox" onclick="makeURL();">
+        <div class="popup_overlay">
+            <label for="trigger" class="popup_trigger"></label>
+                <div class="popup_content">
+                    <label for="trigger" class="close_btn">×</label>
+                    <h4>選択した道具のリスト</h4>
+                    名前：<input type="text" id="list_name" size="20" placeholder="リストの名前" onchange="makeURL();"><br>
+                    URL：<input type="text" id="list_url"><br>
+                    <input type="button" name="copyURL" value="コピー"  onclick="copyURL();">
+                    <span id="popup_messagearea"></span>
+                    <div id="qrcode" style="width: 128px;margin:0 auto;"></div>
+                    <p>このURL・QRコードを直接読み込むことで、チェックボックスで選択した道具のリストを共有することが出来ます。</p>
+                </div>
+        </div>
+    </div>
+    <div id="selected"></div>
   <div id="DBcontents"></div> <!--DBcontents-->
 </body>
 </html>

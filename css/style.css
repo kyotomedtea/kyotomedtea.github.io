@@ -213,28 +213,40 @@ address{
   font-size: 0.75em;
 }
 #db_table tr th:nth-child(1){
-  width: 18%;
+  width: 5%;
 }
 #db_table tr th:nth-child(2){
-  width: 18%;
+  width: 15%;
 }
 #db_table tr th:nth-child(3){
-  width: 40%;
+  width: 15%;
 }
 #db_table tr th:nth-child(4){
-  width: 24%;
+  width: 35%;
+}
+#db_table tr th:nth-child(5){
+  width: 25%;
+}
+#db_table tr th:nth-child(6){
+  width: 5%;
 }
 #db_table tr td:nth-child(1){
-  width: 18%;
+  width: 5%;
 }
 #db_table tr td:nth-child(2){
-  width: 18%;
+  width: 15%;
 }
 #db_table tr td:nth-child(3){
-  width: 40%;
+  width: 15%;
 }
 #db_table tr td:nth-child(4){
-  width: 24%;
+  width: 35%;
+}
+#db_table tr td:nth-child(5){
+  width: 25%;
+}
+#db_table tr td:nth-child(6){
+  width: 5%;
 }
 
 .kensaku{

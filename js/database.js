@@ -7,6 +7,9 @@ $(document).ready(function(){  //読み込み時に動作
   //上記jsonURLはGoogleドライブ上にある、doGET関数を持つserver.gsのdeploy as web appのURL
   //URLパラメータを分離。
   selectedItems = getParam("items").split(",");
+  if (selectedItems != []) {
+    document.getElementById("onlyselected").checked = true;
+  }
   var listname = getParam("name");
   if (listname != null) {
     document.getElementById("list_title").innerHTML = "<h4>リスト名：" + listname + "</h4>";

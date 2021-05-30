@@ -9,12 +9,10 @@ $(document).ready(function(){  //読み込み時に動作
   var itemst = getParam("items");
   if (itemst != null) {
     selectedItems = itemst.split(",");
-  }
-  if (selectedItems != []) {
     document.getElementById("onlyselected").checked = true;
   }
   var listname = getParam("name");
-  if (listname != null) {
+  if (listname != undefined) {
     document.getElementById("list_title").innerHTML = "<h4>リスト名：" + listname + "</h4>";
     document.getElementById("list_name").value = listname;
     document.getElementById("onlyselected").checked = true;

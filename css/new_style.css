@@ -1,0 +1,280 @@
+@charset "UTF-8";
+h1 {
+    color:#006e54;
+    font-size:36px;
+    line-height:1.2;
+  }
+  
+h1 a{
+     text-decoration:none;
+    }
+  
+body {
+    width:1080px;
+    margin:0 auto;
+    font: size 18px;
+    color:#666;
+    font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+    line-height:1.6;
+  }
+
+  h2 {
+    margin-bottom:0.5em;
+    font: size 20px;
+    color:#006e54;
+    border-bottom:1px solid #006e54;
+    border-left:10px solid #006e54;
+    padding-left:0.8em;
+  }
+
+  ul,ol,dl {
+    margin:0 0 1em 0;
+  }
+  ul li {
+    list-style:none;
+  }
+  ol li {
+    list-style:decimal;
+  }
+  strong {
+    font-weight:bold;
+    color:#006e54;
+  }
+/*================================================
+ *  ヘッダー
+ ================================================*/
+ header {
+  position:relative;
+  margin:10px 0;
+}
+header h1 {
+  margin-bottom:20px;
+}
+
+/*================================================
+ *  フッター
+ ================================================*/
+footer {
+  clear:both;
+}
+
+.footmenu {
+  width:100%;
+  padding:20px 0;
+  overflow:hidden;
+  border-top:1px dotted #ccc;
+  border-bottom:1px dotted #ccc;
+}
+.footmenu ul {
+  position:relative;
+  float:left;
+  left:50%;
+  margin:0;
+}
+.footmenu li {
+  position:relative;
+  left:-50%;
+  float:left;
+  list-style:none;
+  padding:0 10px;
+  font-size:12px;
+  text-align:center;
+}
+.footmenu li a{
+	text-decoration:none;
+	display:block;
+}
+
+.copyright {
+  clear:both;
+  padding:20px 0;
+  font-size:11px;
+  text-align:center;
+}
+
+/*================================================
+ *  ページトップへの戻り
+ ================================================*/
+.totop {
+  position:fixed;
+  bottom:15px;
+  right:15px;
+}
+.totop a {
+  display:block;
+  text-decoration:none;
+}
+.totop img {
+  background:#7dbdb4;
+}
+.totop img:hover {
+  background:#85d1c6;
+}
+
+/* reset */
+button{background:transparent;border:none;cursor:pointer;outline:none;padding:0;appearance:none;}ul{list-style-type:none;margin:0;padding:0;}li,p{margin: 0;}
+/* reset */
+
+button {
+  display: block;
+  cursor: pointer;
+  background-color: #006e54;
+  text-align: left;
+  color: #fff;
+  font-size: 25px;
+  padding-left: 10px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+}
+/*================================================
+ *  折り畳みコード
+ ================================================*/
+ /*参照ページ
+ https://webdesignday.jp/inspiration/technique/css/5316/#label
+ */
+ .acd-check{
+  display: none;
+}
+.acd-label{
+  background: #006e54;
+  color: #fff;
+  font-size: large;
+  display: block;
+  margin-bottom: 1px;
+  padding: 10px;
+}
+
+.accordion{
+  display: none;
+}
+
+/*================================================
+ *  スマートフォン向けデザイン
+ ================================================*/
+ @media screen and (max-width:779px) {
+  body {
+    box-sizing: border-box;
+    width:100%;
+    padding:0 10px;
+  }
+
+  #map{
+      width:100%;
+  }
+  .wasuremono{
+      width:100%;
+  }
+
+  header h1 {
+      margin-bottom:0;
+  }
+
+  nav li{
+      width:33.33%;
+      font-size:90%;
+  }
+
+  .tel {
+      position:relative;
+      text-align:right;
+  }
+
+  #main {
+    float:none;
+    width:100%;
+  }
+
+  #sub {
+    float:none;
+    width:100%;
+  }
+
+  .catalog {
+    margin-right:-2%;
+  }
+  .catalog li {
+    float:left;
+    width:23%;
+    margin:0 2% 2% 0;
+  }
+
+  .catalog li img {
+    width:100%;
+  }
+
+  .bnr {
+    overflow:hidden;
+    margin-right:-2%;
+  }
+
+  .bnr li {
+    float:left;
+    width:48%;
+    margin:0 2% 2% 0;
+  }
+
+  .bnr li img {
+    width:100%;
+  }
+
+  .justimg{
+    width: 100%;
+  }
+  .img{
+    width: 100%;
+  }
+  #logo{
+    width: 100%;
+    height: 70px;
+    background-size: 100% auto;
+  }
+
+  /* 下層サブメニュー */
+  #subnav {
+    display:block;
+    position:relative;
+  }
+  #subnav h3 {
+    cursor:pointer;
+    background:#85d1c6;
+  }
+  #subnav h3:after {
+    position:absolute;
+    content:"\0025bc";
+    top:3px;
+    right:5px;
+  }
+  #subnav h3.menuOpen:after {
+    position:absolute;
+    content:"\0025b2";
+    top:3px;
+    right:5px;
+  }
+  #subnav li {
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  #subnav li a:before {
+    content:"\0025a0";
+    color:#5b4111;
+  }
+  #subnav li a {
+    display:block;
+    padding:5px 2px;
+    border-bottom:1px dotted #ddd;
+    text-decoration:none;
+  }
+  #subnav li a:hover {
+    background:#f7d0cb;
+  }
+  #db_table {
+    font-size: 76%;
+  }
+  input[type=text], select{
+    font-size: 16px;
+    transform: scale(0.8);
+}
+}

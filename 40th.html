@@ -11,8 +11,14 @@
 <![endif]-->
 </head>
 <body>
+<script type="text/javascript" src="js/md5.js"></script>
 <script type="text/javascript">
-    window.top.location.href='https://script.google.com/macros/s/AKfycbycrPcm2caZU1n9N5SHJ9beHbmmTPQxFBUtiVmwpZ9VPJMFSBqP/exec';
+  //トークン生成
+  let now = new Date();
+  let seed = now.toString() + Math.random();
+  let token = CybozuLabs.MD5.calc(seed);
+  let url = 'https://script.google.com/macros/s/AKfycbycrPcm2caZU1n9N5SHJ9beHbmmTPQxFBUtiVmwpZ9VPJMFSBqP/exec?token=' + token;
+    window.top.location.href=url;
 </script>
 <header>
     <a href="index.html"><h1 id="logo"><span>京都大学医学部茶道部</span></h1></a>
@@ -45,7 +51,7 @@
 <div id="contents">
   <div id="main">
     <p>40周年特設サイト</p>
-    自動で遷移しない場合は<a href='https://script.google.com/macros/s/AKfycbycrPcm2caZU1n9N5SHJ9beHbmmTPQxFBUtiVmwpZ9VPJMFSBqP/exec'>こちら</a>
+    自動で遷移しない場合は<a id='link' href='https://script.google.com/macros/s/AKfycbycrPcm2caZU1n9N5SHJ9beHbmmTPQxFBUtiVmwpZ9VPJMFSBqP/exec'>こちら</a>
   </div><!-- /#main -->
   <div id="sub">
     <h3>Twitter</h3>
@@ -69,4 +75,8 @@
 </footer>
 <div class="totop"><a href="#"><img src="images/totop.png" alt="ページのトップへ戻る"></a></div><!-- .totop -->
 </body>
+<script>
+  let link = document.getElementById('link');
+  link.setAttribute('href', url);
+</script>
 </html>

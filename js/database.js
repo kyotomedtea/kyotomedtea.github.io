@@ -3,7 +3,7 @@ var selectedItems = [];
 
 $(document).ready(function(){  //読み込み時に動作
   //道具データベースのjsonを取りに行くURL
-  var jsonURL = "https://script.google.com/macros/s/AKfycbx-dueD6pv4UmFP82zYsE803Nzh4MYY-Uaqa7B7HLhFK-cAig/exec"; //新しい方
+  var jsonURL = "https://script.google.com/macros/s/AKfycbz1OASe8_yXTb5XqX1Frkgu0a9WAi5yUm7RY1YvRM0Exi_Ok9yFtQvHRJaBj1bspC0/exec"; //新しい方
   //上記jsonURLはGoogleドライブ上にある、doGET関数を持つserver.gsのdeploy as web appのURL
   //URLパラメータを分離。選択済リストのIDやリスト名がURLに載っていれば処理する
   var itemst = getParam("items");
